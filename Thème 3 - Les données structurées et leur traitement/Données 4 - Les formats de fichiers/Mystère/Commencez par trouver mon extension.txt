@@ -1,0 +1,5 @@
+Ceci est un simple fichier texte. Son contenu apparait de la même manière dans le bloc-notes et dans le volet ASCII d'un éditeur hexadécimal.
+D'autres types de fichiers commencent généralement par un identifiant permettant de reconnaitre leur contenu.
+Pour voir cet identifiant, on peut utiliser l'éditeur hexadécimal.
+Regardez comment commence un fichier zip en ouvrant dans l'éditeur hexadécimal le fichier zip qui contient celui-ci.
+Essayez ensuite de retrouver l'extension des autres fichiers inconnus.

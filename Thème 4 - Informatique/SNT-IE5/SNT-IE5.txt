@@ -1,0 +1,118 @@
+﻿Sciences Numériques et Technologie
+Interrogation écrite N°5 - 19/05/2022
+Partie programmation
+
+Dans cette partie, vous allez devoir écrire deux programmes dans le simulateur
+de carte micro:bit disponible en ligne à l'adresse https://create.withcode.uk/
+
+Il est possible que le simulateur se bloque quand vous modifierez votre programme.
+Dans ce cas, sélectionnez tout votre code et copiez-le (Ctrl+C) ou coupez-le (Ctrl+X), 
+ce qui fait disparaitre le code mais permet d'être sûr de ce que l'on a pris.
+Puis, rafraichissez la page de votre navigateur et collez votre programme pour 
+remplacer le programme par défaut du simulateur. Vous pouvez alors exécuter le
+programme modifié.
+
+
+Premier programme:
+Recopier le programme suivant dans le simulateur:
+
+
+# DEBUT programme 1
+
+from microbit import *
+
+while True:
+  if accelerometer.is_gesture("up"):    # Reconnait un geste
+    display.show(Image.ARROW_N)         # Affiche une flèche vers le haut (Nord)
+  elif accelerometer.is_gesture("left"):
+    display.show(Image.ARROW_W)         # Flèche vers la gauche (Ouest ou West en anglais)
+  else:
+    display.show(Image.HAPPY)
+  sleep(500)
+
+# FIN programme 1
+
+
+Dans ce programme, on trouve l'instruction elif qui est la combinaison de else (sinon) 
+et de if (si).
+Donc, dans ce programme, si on fait le geste "haut" (up), on affiche une flèche vers le nord,
+c'est-à-dire vers le haut. Sinon (donc si on n'a pas fait le geste "haut"), on se demande
+si on a fait le geste "gauche" (left) pour afficher une flèche vers la gauche. Sinon (donc,
+si on n'a fait ni le geste "haut", ni le geste "gauche"), on affiche un sourire.
+
+Dans le simulateur, on peut simuler des gestes en allant dans l'onglet "Accelerometer".
+
+QUESTION 1 (3 points): 
+Complétez le programme pour afficher en plus une flèche vers le bas quand on fait le geste "down"
+et une flèche vers la droite quand on fait le geste "right".
+Collez votre programme complet ci-dessous:
+
+# DEBUT réponse 1
+
+from microbit import *
+
+while True:
+  if accelerometer.is_gesture("up"):    # Reconnait un geste
+    display.show(Image.ARROW_N)         # Affiche une flèche vers le haut (Nord)
+  elif accelerometer.is_gesture("left"):
+    display.show(Image.ARROW_W)         # Flèche vers la gauche (Ouest ou West en anglais)
+  elif accelerometer.is_gesture("down"):
+    display.show(Image.ARROW_S)
+  elif accelerometer.is_gesture("right"):
+    display.show(Image.ARROW_E)
+  else:
+    display.show(Image.HAPPY)
+  sleep(500)
+
+# FIN réponse 1
+
+
+
+
+
+Deuxième programme:
+Recopier le programme suivant dans le simulateur:
+
+
+# DEBUT programme 2
+
+from microbit import *
+
+while True:
+  temp = temperature()   # Mesure la température et la stocke dans la variable temp
+  display.scroll(temp)   # Fait défiler la valeur stockée dans temp
+  sleep(500)
+
+# FIN programme 2
+
+
+Ce programme mesure la température et fait défiler sa valeur sur le panneau de dels.
+L'onglet "Thermometer" du simulateur permet de régler la température mesurée de 0 à 100°C.
+
+
+QUESTION 2 (2 points): 
+Le simulateur étant réglé sur une température de 23 °C (c'est la valeur sur laquelle il est réglé
+si vous n'avez encore rien changé).
+Modifiez (il faut peut-être enlever certaines choses) le programme précédent.
+On veut que le nouveau programme affiche Image.HAPPY (visage souriant) tant que la température
+reste en-dessous de 35 °C, mais dès que la température va dépasser 35°C, on doit voir s'afficher
+Image.SAD et cette image doit rester afficher même si la température redescend sous 35°C.
+
+Collez votre programme complet ci-dessous:
+
+# DEBUT réponse 2
+
+from microbit import *
+
+while True:
+  temp = temperature()   # Mesure la température et la stocke dans la variable temp
+  if temp<35:
+    display.show(Image.HAPPY)
+  elif temp>35:
+    display.show(Image.SAD)
+while False:
+    if temp<35:
+      display.show(Image.SAD)
+sleep(500)
+
+# FIN réponse 2

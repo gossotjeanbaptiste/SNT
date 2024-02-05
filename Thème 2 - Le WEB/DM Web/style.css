@@ -1,0 +1,56 @@
+body {
+  background: linear-gradient(to left, #5F0C71, #402AEE);
+  font-family: Minecraftia;
+}
+
+@font-face {
+  font-family: "Minecraftia";
+  src: url("fonts/Minecraftia-Regular.ttf");
+}
+
+/*Sources : linear-gradient : site de Mozilla
+          : Commentaire : site de Mozilla */
+
+h1,
+h3 {
+  text-align: center;
+  color: #BA1515;
+}
+
+p {
+  color: #040BD6;
+  margin-left: 80px;
+  background-color: #5B7E90;
+  text-align: left;
+}
+
+li {
+  margin-left: 80px;
+}
+
+em {
+  color: #BA155D;
+}
+
+ul {
+  padding-left: 80px;
+}
+
+a {
+  color: #fc0303;
+}
+
+button {
+  font-size: large;
+  background-color: #000;
+  font-family: Lexend;
+}
+
+@font-face {
+  font-family: "Lexend";
+  src: url("fonts/Lexend-Regular.ttf");
+}
+
+div {
+  text-align: center;
+}
